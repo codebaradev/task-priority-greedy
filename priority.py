@@ -85,9 +85,14 @@ if __name__ == "__main__":
         Task("Mengerjakan Quiz", datetime.now() + timedelta(hours=2), 9, 1),
         Task("Diskusi Kelompok", datetime.now() + timedelta(hours=12), 7, 2),
         Task("Membaca Berita", datetime.now() + timedelta(hours=5), 4, 0.5),
+        Task("Rencana Liburan", datetime.now() + timedelta(days=5), 8, 2),
+        Task("Belajar Bahasa Asing", datetime.now() + timedelta(days=4), 7, 1),
+        Task("Menyusun Proposal", datetime.now() + timedelta(days=6), 9, 3),
+        Task("Membuat Portofolio", datetime.now() + timedelta(days=7), 8, 2),
+        Task("Mengikuti Kursus Online", datetime.now() + timedelta(days=5), 6, 2),
     ]
 
-    max_hours = 3  # Batas waktu pengerjaan harian
+    max_hours = 10  # Batas waktu pengerjaan harian
 
     selected = greedy_knapsack(tasks, max_hours)
 
@@ -99,5 +104,3 @@ if __name__ == "__main__":
     print("=== Tugas Terpilih Hari Ini ===")
     for task in selected:
         print(f"- {task.name}: {task.duration} jam | Profit={task.profit:.2f} | Kategori: {task.category}")
-
-    
